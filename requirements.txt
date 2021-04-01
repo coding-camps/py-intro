@@ -1,0 +1,208 @@
+
+## Math + Data Science
+numpy
+scipy
+pandas
+sympy
+
+# high performance
+numba
+
+## Image + Date View
+#Pillow 它是PIL（Python图形库）的一个友好分支。对于用户比PIL更加友好，对于任何在图形领域工作的人是必备的库。
+Pillow
+opencv-python
+#Matplotlib 一个绘制数据图的库。对于数据科学家或分析师非常有用。
+matplotlib
+seaborn
+# 绘制文氏图
+# matplotlib-venn
+# scikit-image
+
+## AI + Big data
+scikit-learn
+#- PyTorch
+torch
+torchvision
+torchaudio
+#- TensorFlow
+# tensorflow
+
+## Network
+# requests
+# beautifulsoup4
+
+# networkx
+# wget
+
+# ExifRead
+# PyPDF2 merged to pypdf
+pypdf
+#pypdf[image]
+
+# moviepy
+# ffmpeg-python
+# ffmpy
+# ffmpy3
+
+## web spider
+# Scrapy
+
+
+# 7、wxPython.
+# Python的一个GUI（图形用户界面）工具。我主要用它替代tkinter。你一定会爱上它的。
+# 8、SQLAlchemy.
+# 一个数据库的库。对它的评价褒贬参半。是否使用的决定权在你手里。
+# 10、Twisted.
+# 对于网络应用开发者最重要的工具。它有非常优美的api，被很多Python开发大牛使用。
+# 11、Pygame.
+# 哪个程序员不喜欢玩游戏和写游戏？这个库会让你在开发2D游戏的时候如虎添翼。
+# 12、Pyglet.
+# 3D动画和游戏开发引擎。非常有名的Python版本Minecraft就是用这个引擎做的。
+# 13、pyQT.
+#Python的GUI工具。这是我在给Python脚本开发用户界面时次于wxPython的选择。
+# 14、pyGtk.
+#也是Python GUI库。很有名的Bittorrent客户端就是用它做的。
+# 15、Scapy.
+# 用Python写的数据包探测和分析库。
+# 16、pywin32.
+# 一个提供和windows交互的方法和类的Python库。
+# 17、nltk.
+# 自然语言工具包。我知道大多数人不会用它，但它通用性非常高。如果你需要处理字符串的话，它是非常好的库。但它的功能远远不止如此，自己摸索一下吧。
+# 18、nose.
+# Python的测试框架。被成千上万的Python程序员使用。如果你做测试导向的开发，那么它是必不可少的。
+# 20、IPython.
+# 怎么称赞这个工具的功能都不为过。它把Python的提示信息做到了极致。包括完成信息、历史信息、shell功能，以及其他很多很多方面。一定要研究一下它。
+# 21.TensorFlow
+# 该库是由Google与Brain Team合作开发的。如果您目前正在使用Python进行机器学习项目，那么您可能已经听说过这个流行的开源库，即TensorFlow。
+# 23.Scikit-Learn
+# 它是一个与NumPy和SciPy相关联的Python库。它被认为是处理复杂数据的最佳库之一。
+# 24.Keras.
+# Keras被认为是Python中最酷的机器学习库之一。它提供了一种更容易表达神经网络的机制。Keras还提供了一些用于编译模型，处理数据集，图形可视化等的最佳工具。
+# 25.PyTorch
+#PyTorch是最大的机器学习库，允许开发人员通过GPU加速执行张量计算，创建动态计算图，并自动计算梯度。除此之外，PyTorch还提供丰富的API，用于解决与神经网络相关的应用问题。这个机器学习库基于Torch，它是一个用C语言实现的开源机器库，带有Lua中的包装器。</p>
+
+# 时间和日期
+# arrow：更好的 Python 日期时间操作类库。
+# dateutil：Python datetime 模块的扩展。
+# moment：一个用来处理时间和日期的 Python 库。灵感来自于 Moment.js。
+# pendulum：一个比 arrow 更具有明确的，可预测的行为的时间操作库。
+
+# 文本处理
+# chardet：字符编码检测器，兼容 Python2 和 Python3。
+# difflib：(Python 标准库)帮助我们进行差异化比较。
+# fuzzywuzzy：模糊字符串匹配。
+# pypinyin：汉字拼音转换工具 Python 版。
+# xpinyin：一个用于把汉字转换为拼音的库。
+# Pygments：通用语法高亮工具。
+# pyparsing：生成通用解析器的框架。
+# sqlparse：一个无验证的 SQL 解析器。
+# PDFMiner：一个用于从 PDF 文档中抽取信息的工具。
+# PyYAML：Python 版本的 YAML 解析器。
+# csvkit：用于转换和操作 CSV 的工具。
+
+# 自然语言处理
+# NLTK：一个先进的平台，用以构建处理人类语言数据的 Python 程序。
+# jieba：中文分词工具。
+
+# 命令行工具
+# cement：Python 的命令行程序框架。
+# click：一个通过组合的方式来创建精美命令行界面的包。
+# cliff：一个用于创建命令行程序的框架，可以创建具有多层命令的命令行程序。
+# asciimatics：跨平台，全屏终端包（即鼠标/键盘输入和彩色，定位文本输出），完整的复杂动画和特殊效果的高级 API。
+# colorama：跨平台彩色终端文本。
+# rich：一个在终端中支持富文本和格式美化的 Python 库， 同时提供了RichHandler日志处理程序。
+
+# caniusepython3：判断是哪个项目妨碍你你移植到 Python3。
+# pyftpdlib：一个速度极快和可扩展的 Python FTP 服务库。
+# try：一个极其简单的命令行工具，用来试用 python 库。
+# httpie：一个命令行 HTTP 客户端，cURL 的替代品，易用性更好。
+# iredis：支持自动补全和高亮显示的 redis 命令行工具。
+# mycli：支持自动补全和语法高亮的 MySQL 命令行客户端
+# pgcli：支持自动补全和语法高亮的 Postgres 命令行工具。
+
+# pillow：Pillow 是一个更加易用版的 PIL。
+# imgSeek：一个使用视觉相似性搜索一组图片集合的项目。
+# nude.py：裸体检测。
+# scikit-image：一个用于（科学）图像处理的 Python 库。
+# face_recognition：简单易用的 python 人脸识别库。
+# pyvips：低内存消耗且快速的图像处理库。
+
+# dejavu：音频指纹提取和识别。
+# m3u8：一个用来解析 m3u8 文件的模块。
+
+# scikit-video：SciPy 视频处理常用程序。
+# moviepy：一个用来进行基于脚本的视频编辑模块，适用于多种格式，包括动图 GIFs。
+
+# aiohttp：基于 asyncio 的异步 HTTP 网络库。
+# requests：人性化的 HTTP 请求库。
+# httplib2：全面的 HTTP 客户端库。
+# urllib3：一个具有线程安全连接池，支持文件 post，清晰友好的 HTTP 库。
+# httpx：下一代 Python HTTP 客户端。
+
+# aiomysql：基于 asyncio 的异步 MySQL 数据库操作库。
+# mysql-python：Python 的 MySQL 数据库连接器。
+# ysqlclient：mysql-python 分支，支持 Python 3。
+# PyMySQL：纯 Python MySQL 驱动，兼容 mysql-python。
+
+# asyncio-redis：基于 asyncio 的 redis 客户端 (PEP 3156)。
+# PyMongo：MongoDB 的官方 Python 客户端。
+# kafka-python：Apache Kafka Python 客户端。
+
+# awesome-sqlalchemy
+# SQLAlchemy：Python SQL 工具以及对象关系映射工具。
+# authlib：一个强大的Python库，用来构建 OAuth 和 OpenID 服务端。包括：JWS, JWK, JWA, JWT。
+# OAuthLib：一个 OAuth 请求-签名逻辑通用、 完整的实现。
+# Babel：一个 Python 的国际化库。
+
+# furl：一个让处理 URL 更简单小型 Python 库。
+# purl：一个简单的，不可变的 URL 类，具有简洁的 API 来进行询问和处理。
+# webargs：一个解析 HTTP 请求参数的库，内置对流行 web 框架的支持，包括 Flask, Django, Bottle, Tornado 和 Pyramid。
+
+# BeautifulSoup：以 Python 风格的方式来对 HTML 或 XML 进行迭代，搜索和修改。
+# html5lib：一个兼容标准的 HTML 文档和片段解析及序列化库。
+# lxml：一个非常快速，简单易用，功能齐全的库，用来处理 HTML 和 XML。
+# pyquery：一个解析 HTML 的库，类似 jQuery。
+# requests-html：人性化的，Pythonic 的 HTML 解析库。
+# xhtml2pdf：HTML/CSS 转 PDF 工具。
+# Scrapy：一个快速高级的屏幕爬取及网页采集框架。
+# cola：一个分布式爬虫框架。
+# html2text：将 HTML 转换为 Markdown 格式文本。
+
+# envoy：比 Python subprocess 模块更人性化。
+# sh：一个完备的 subprocess 替代库。
+# sarge：另一 种 subprocess 模块的封装。
+
+# gevent：一个基于协程的 Python 网络库，使用 greenlet。
+# Tomorrow：用于产生异步代码的神奇的装饰器语法实现。
+
+# trio：异步并发和 I/O 友好的库。
+
+# PyOpenGL：OpenGL 的 Python 绑定及其相关 APIs。
+# Pygame：Pygame 是一组 Python 模块，用来编写游戏。
+# mock：(Python 标准库) 一个用于伪造测试的库。
+# httmock：针对 Python 2.6+ 和 3.2+ 生成 伪造请求的库。
+# responses：伪造 Python 中的 requests 库的一个通用库。
+# VCR.py：在你的测试中记录和重放 HTTP 交互。
+
+# faker：一个 Python 库，用来生成伪数据。
+
+# fsociety：一款渗透测试框架。
+# setoolkit：社会工程工具包。
+# sqlmap：自动 SQL 注入和数据库接管工具。
+
+# blaze：NumPy 和 Pandas 的大数据接口。
+# NetworkX：一个为复杂网络设计的高性能软件。
+# Neupy：执行和测试各种不同的人工神经网络算法。
+# Colour：大量色彩理论转换和算法的实现。
+
+# pyocr：Tesseract 和 Cuneiform 的包装库。
+# pytesseract：Google Tesseract OCR 的另一包装库。
+# SimpleCV：一个用来创建计算机视觉应用的开源框架。
+# EasyOCR：支持40多种语言的即用型 OCR。
+# tesserocr：另一个简单的，兼容 Pillow 的 tesseract-ocr API 装饰器，可用于 OCR。
+
+# graphene：Python GraphQL 框架。
+
+# algorithms：数据结构和算法的简单示例。
+# TheAlgorithms：所有算法的 Python 实现。
