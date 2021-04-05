@@ -16,6 +16,8 @@ def mod_ctime(pdf_file, pdf_nfile, new_ctime):
                 '/Title': '',
                 '/CreationDate': new_ctime,
                 '/ModDate': new_ctime,
+                '/Producer': "ProducerX",
+                '/Creator': "CreatorX",
             })
 
             with open(pdf_nfile, 'wb') as new_file:

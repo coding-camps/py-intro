@@ -91,12 +91,12 @@ def page_picker(target_file: str, page_index_list: list, new_path: str = None, n
     output_file = _check_and_prepare(new_filename, new_path, target_file)
 
     with open(target_file, 'rb') as target_pdf:
-        reader = pypdf.PdfFileReader(target_pdf)
-        page_total = reader.getNumPages()
-        writer = pypdf.PdfFileWriter()
+        reader = pypdf.PdfReader(target_pdf)
+        page_total = len(reader.pages)
+        writer = pypdf.PdfWriter()
         for i in page_index_list:
             if 0 <= i <= page_total:
-                writer.addPage(reader.getPage(i - 1))
+                writer.add_page(reader.pages[i - 1])
             else:
                 print("page index is out of scope:", i)
         with open(output_file, 'ab+') as outfile:
@@ -107,13 +107,13 @@ def remove_pages(target_file: str, page_wil_remove_list: list, new_path: str = N
     output_file = _check_and_prepare(new_filename, new_path, target_file)
 
     with open(target_file, 'rb') as target_pdf:
-        reader = pypdf.PdfFileReader(target_pdf)
-        page_total = reader.getNumPages()
-        writer = pypdf.PdfFileWriter()
+        reader = pypdf.PdfReader(target_pdf)
+        page_total = len(reader.pages)
+        writer = pypdf.PdfWriter()
 
         for i in range(1, page_total + 1):
             if i not in page_wil_remove_list:
-                writer.addPage(reader.getPage(i - 1))
+                writer.add_page(reader.pages[i - 1])
         with open(output_file, 'ab+') as outfile:
             writer.write(outfile)
 
