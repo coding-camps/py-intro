@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-
+# -*- encoding: utf-8 -*-
 import os
 
 import pypdf
@@ -9,8 +8,12 @@ from pypdf.generic import Fit
 
 
 # 读取书签 outline
-def read_outline_items(pdf_path):
-    print()
+def read_outline_items(pdf_path) -> None:
+    """
+    读取书签 outline 并在控制台输出。
+    :param pdf_path: 指定的PDF文件路径
+    :return: 无
+    """
     print(pdf_path)
     with open(pdf_path, 'rb') as pdf_file:
         reader = PdfReader(pdf_file)
@@ -29,17 +32,17 @@ def read_outline_items(pdf_path):
                 print('  | outline_count', outline_item.outline_count)
 
 
-# # 添加书签 outline
-# def write_outline_items(pdf_from_path, pdf_to_path):
-#     writer = PdfWriter()
-#
-#     with open(pdf_from_path, 'rb') as pdf_from_file:
-#         reader = PdfReader(pdf_from_file)
-#         for page, num in zip(reader.pages, range(reader.get_num_pages())):
-#             writer.add_page(page)
-#
-#     writer.write(pdf_to_path)
-#     writer.close()
+# 添加书签 outline
+def write_outline_items(pdf_from_path, pdf_to_path):
+    writer = PdfWriter()
+
+    with open(pdf_from_path, 'rb') as pdf_from_file:
+        reader = PdfReader(pdf_from_file)
+        for page, num in zip(reader.pages, range(reader.get_num_pages())):
+            writer.add_page(page)
+
+    writer.write(pdf_to_path)
+    writer.close()
 
 
 # 读取标签 label

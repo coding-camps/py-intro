@@ -5,19 +5,6 @@ from PIL import Image
 from matplotlib import pyplot as plt
 
 
-def images_combine(img_paths: list, save_name='combined.img'):
-    ''' 水平方向合并图片 '''
-    imgs = []
-    for img in img_paths:
-        imgs.append(Image.open(img))
-    width = sum([img.size[0] for img in imgs])
-    height = max([img.size[1] for img in imgs])
-    joint = Image.new('RGB', (width, height))
-    for idx, img in enumerate(imgs):
-        loc_width = sum([img_sublist.size[0] for img_sublist in imgs[:idx]])
-        joint.paste(img, (loc_width, 0))
-    joint.save(save_name)
-
 
 def warp(pic1, pic2, src_loc, dest_loc, save_path=None):
     '''
