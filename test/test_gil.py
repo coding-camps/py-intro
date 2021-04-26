@@ -6,7 +6,7 @@ import multiprocessing
 def worker_function(idx):
     # 在这里执行 CPU 密集型任务
     print(f'-> {idx + 1}')
-    for i in range(30_000_000):
+    for i in range(3_000_000):
         pass
     print(f': {idx + 1}')
 

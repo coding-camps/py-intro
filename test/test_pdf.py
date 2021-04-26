@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from utils.pdf_file import *
+from utils.file_pdf import *
 
 if __name__ == '__main__':
     '''
