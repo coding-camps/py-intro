@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 import os
+from datetime import datetime
 
 import pypdf
 from pypdf import PdfReader, PdfWriter
@@ -140,3 +141,45 @@ def _check_and_prepare(new_filename, new_path, target_file):
     output_file = os.path.join(new_path, new_filename)
     print("output file", "=>", output_file)
     return output_file
+
+
+def modify_create_datetime(pdf_origin_file: str, pdf_new_file: str, new_create_time: datetime,
+                           new_modify_time: datetime = None):
+    """
+    修改pdf文件的内部创建时间和修改时间。时间格式可通过下方的代码实现。
+
+    datetime(2025,6, 1, 10,8,6).strftime(f"D\072%Y%m%d%H%M%S+08'00'")
+
+    :param pdf_origin_file: 源 PDF 文件
+    :param pdf_new_file:    新 PDF 文件
+    :param new_create_time: PDF 文件内部创建时间
+    :param new_modify_time: PDF 文件内部修改时间
+    :return:
+    """
+    # 时间有关的参考代码
+    # new_ctime = datetime(2025,6, 1, 10,8,6)
+    # utc_time = "+08'00'"  # UTC time optional
+    # print(new_ctime.strftime(f"D\072%Y%m%d%H%M%S{utc_time}"))
+    # new_ctime = new_ctime.strftime(f"D\072%Y%m%d%H%M%S{utc_time}")
+    # new_ctime = datetime(2025,6, 1, 10,8,6).strftime(f"D\072%Y%m%d%H%M%S+08'00'")
+    # print(new_ctime)
+
+    if new_modify_time is None:
+        new_modify_time = new_create_time
+    with open(pdf_origin_file, 'rb') as file:
+        reader = pypdf.PdfReader(file)
+        writer = pypdf.PdfWriter()
+
+        for page in range(len(reader.pages)):
+            writer.add_page(reader.pages[page])
+
+            writer.add_metadata({
+                '/Title': '',
+                '/CreationDate': new_create_time,
+                '/ModDate': new_modify_time,
+                '/Producer': "",
+                '/Creator': "",
+            })
+
+            with open(pdf_new_file, 'wb') as new_file:
+                writer.write(new_file)
