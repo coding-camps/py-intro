@@ -99,3 +99,31 @@ def cls_mac_temp(root_path: str, will_del: bool = False) -> None:
     cnt1 = walk_and_will_del(root_path, "**/._*", will_del)
     cnt2 = walk_and_will_del(root_path, "**/.DS_Store", will_del)
     print(f"total temp files: {cnt1} + {cnt2} = {cnt1 + cnt2}")
+
+
+def prepare_filename_suffix(new_filename, new_path, target_file):
+    """
+    根据指定文件名检查是否存在，如果不存在则返回原文件名，如果存在则返回增加数字后缀的新文件名。
+    :param new_filename:
+    :param new_path:
+    :param target_file:
+    :return:
+    """
+    if not os.path.isfile(target_file):
+        raise Exception("target file path must be a file: " + target_file)
+    if new_path is None:
+        new_path = os.path.dirname(target_file)
+    if not os.path.exists(new_path):
+        os.mkdir(new_path)
+    if new_filename is None:
+        index = 1
+        base_filename, file_ext = (os.path.basename(target_file).split('.'))
+        file_ext = '.' + file_ext
+        temp_filename = base_filename + "-" + str(index) + file_ext
+        while os.path.exists(os.path.join(new_path, temp_filename)):
+            index += 1
+            temp_filename = base_filename + "-" + str(index) + file_ext
+        new_filename = temp_filename
+    output_file = os.path.join(new_path, new_filename)
+    print("output file", "=>", output_file)
+    return output_file

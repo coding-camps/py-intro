@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
-import os
 from datetime import datetime
 
 import pypdf
 from pypdf import PdfReader, PdfWriter
 from pypdf.constants import PageLabelStyle
 from pypdf.generic import Fit
+
+from file_common import prepare_filename_suffix
 
 
 # 读取书签 outline
@@ -92,7 +93,7 @@ def save_pics(pdf_from, pics_to):
 
 # page_picker
 def page_picker(target_file: str, page_index_list: list, new_path: str = None, new_filename: str = None):
-    output_file = _check_and_prepare(new_filename, new_path, target_file)
+    output_file = prepare_filename_suffix(new_filename, new_path, target_file)
 
     with open(target_file, 'rb') as target_pdf:
         reader = pypdf.PdfReader(target_pdf)
@@ -108,7 +109,7 @@ def page_picker(target_file: str, page_index_list: list, new_path: str = None, n
 
 
 def remove_pages(target_file: str, page_wil_remove_list: list, new_path: str = None, new_filename: str = None):
-    output_file = _check_and_prepare(new_filename, new_path, target_file)
+    output_file = prepare_filename_suffix(new_filename, new_path, target_file)
 
     with open(target_file, 'rb') as target_pdf:
         reader = pypdf.PdfReader(target_pdf)
@@ -120,27 +121,6 @@ def remove_pages(target_file: str, page_wil_remove_list: list, new_path: str = N
                 writer.add_page(reader.pages[i - 1])
         with open(output_file, 'ab+') as outfile:
             writer.write(outfile)
-
-
-def _check_and_prepare(new_filename, new_path, target_file):
-    if not os.path.isfile(target_file):
-        raise Exception("target file path must be a file: " + target_file)
-    if new_path is None:
-        new_path = os.path.dirname(target_file)
-    if not os.path.exists(new_path):
-        os.mkdir(new_path)
-    if new_filename is None:
-        index = 1
-        base_filename, file_ext = (os.path.basename(target_file).split('.'))
-        file_ext = '.' + file_ext
-        temp_filename = base_filename + "-" + str(index) + file_ext
-        while os.path.exists(os.path.join(new_path, temp_filename)):
-            index += 1
-            temp_filename = base_filename + "-" + str(index) + file_ext
-        new_filename = temp_filename
-    output_file = os.path.join(new_path, new_filename)
-    print("output file", "=>", output_file)
-    return output_file
 
 
 def modify_create_datetime(pdf_origin_file: str, pdf_new_file: str, new_create_time: datetime,
