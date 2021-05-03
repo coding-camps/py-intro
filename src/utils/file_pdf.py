@@ -2,6 +2,7 @@
 from datetime import datetime
 
 import pypdf
+from PIL import Image
 from pypdf import PdfReader, PdfWriter
 from pypdf.constants import PageLabelStyle
 from pypdf.generic import Fit
@@ -163,3 +164,9 @@ def modify_create_datetime(pdf_origin_file: str, pdf_new_file: str, new_create_t
 
             with open(pdf_new_file, 'wb') as new_file:
                 writer.write(new_file)
+
+
+def images_to_pdf(files: list, pdf_file: str):
+    images = [Image.open(img).convert('RGB') for img in files]
+    images[0].save(pdf_file, save_all=True, append_images=images[1:])
+    print("image -> pdf : ok")
