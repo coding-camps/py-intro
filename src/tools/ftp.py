@@ -16,7 +16,7 @@ class FtpClient(object):
         self.client.login(username, passwd)
         print(self.ftp.welcome)
 
-    def download(self, local_path, remote_path, filename):
+    def download_file(self, local_path, remote_path, filename):
         os.chdir(local_path)
         self.client.cwd(remote_path)
         self.client.nlst()
