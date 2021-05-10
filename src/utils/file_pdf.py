@@ -7,7 +7,7 @@ from pypdf import PdfReader, PdfWriter
 from pypdf.constants import PageLabelStyle
 from pypdf.generic import Fit
 
-from file_common import prepare_filename_suffix
+from utils.file_common import prepare_filename_suffix
 
 
 # 读取书签 outline
@@ -169,4 +169,26 @@ def modify_create_datetime(pdf_origin_file: str, pdf_new_file: str, new_create_t
 def images_to_pdf(files: list, pdf_file: str):
     images = [Image.open(img).convert('RGB') for img in files]
     images[0].save(pdf_file, save_all=True, append_images=images[1:])
+    # if (len(images) > 1):
+    #     images[0].save(pdf_file, save_all=True, append_images=images[1:])
+    # else:
+    #     images[0].save(pdf_file)
     print("image -> pdf : ok")
+
+def merge_pdf(pdf_files: list, merge_file: str):
+    merger = PdfWriter()
+    for pdf_file in pdf_files:
+        merger.append(pdf_file)
+    merger.write(merge_file)
+
+def merge_pdf_v2(pdf_files: list, merge_file: str):
+    merger = PdfWriter()
+    for pdf_file in pdf_files:
+        with open(pdf_file, 'rb') as pdf:
+            reader = PdfReader(pdf)
+            for page in reader.pages:
+                merger.add_page(page)
+    merger.write(merge_file)
+
+
+
